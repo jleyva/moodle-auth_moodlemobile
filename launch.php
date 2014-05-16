@@ -55,9 +55,8 @@ if (!is_enabled_auth($auth)) {
     throw new moodle_exception('authnotenabledorconfigured', 'auth_moodlemobile');
 }
 $mobileauth = get_auth_plugin($auth);
-$typeoflogin = $mobileauth->config->typeoflogin;
 
-if (empty($typeoflogin)) {
+if (empty($mobileauth->config->typeoflogin)) {
     throw new moodle_exception('authnotenabledorconfigured', 'auth_moodlemobile');
 }
 
