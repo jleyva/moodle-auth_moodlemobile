@@ -36,7 +36,7 @@ class auth_plugin_moodlemobile extends auth_plugin_base {
      */
     public function __construct() {
         $this->authtype = 'moodlemobile';
-        $this->config = get_config('auth/moodlemobile');
+        $this->config = get_config('auth_moodlemobile');
     }
 
     /**
@@ -68,32 +68,6 @@ class auth_plugin_moodlemobile extends auth_plugin_base {
      */
     public function is_internal() {
         return false;
-    }
-
-    /**
-     * Prints a form for configuring this authentication plugin.
-     *
-     * This function is called from admin/auth.php, and outputs a full page with
-     * a form for configuring this plugin.
-     *
-     * @param array $page An object containing all the data for this page.
-     */
-    public function config_form($config, $err, $userfields) {
-        include("config.html");
-    }
-
-    /**
-     * Processes and stores configuration data for this authentication plugin.
-     */
-    public function process_config($config) {
-        // Set to defaults if undefined.
-        if (!isset($config->typeoflogin)) {
-            $config->typeoflogin = 1;
-        }
-
-        // save settings
-        set_config('typeoflogin', $config->typeoflogin, 'auth/moodlemobile');
-        return true;
     }
 
     /**

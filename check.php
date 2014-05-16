@@ -71,9 +71,8 @@ $auth = 'moodlemobile';
 if (is_enabled_auth($auth)) {
     $mobileauth = get_auth_plugin($auth);
 
-    $typeoflogin = $mobileauth->config->typeoflogin;
-    if (!empty($typeoflogin)) {
-        $response->code = $typeoflogin;
+    if (!empty($mobileauth->config->typeoflogin)) {
+        $response->code = $mobileauth->config->typeoflogin;
     }
 }
 
