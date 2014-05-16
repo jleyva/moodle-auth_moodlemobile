@@ -12,7 +12,9 @@ Configuration
 =============
 
 Go to Site administration / Plugins / Authentication
+
 Enable the Moodle Mobile authentication plugin
+
 Edit the plugin settings, select:
 
 - The user must log in using the app: This means that the user enter his credentials in the app.
