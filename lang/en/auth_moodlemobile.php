@@ -24,3 +24,9 @@
 
 $string['auth_moodlemobiledescription'] = 'Authentication plugin used by the Mobile app to check if the Mobile service is enabled and if the site uses SSO plugins.';
 $string['pluginname'] = 'Moodle Mobile authentication';
+$string['auth_moodlemobilesettings'] = 'Settings';
+$string['auth_moodlemobiletypeoflogin'] = 'Choose the type of login';
+$string['auth_moodlemobiletypeoflogin_key'] = 'Type of login';
+$string['loginintheapp'] = 'The user must login in the app';
+$string['logininthebrowser'] = 'The user must login in the site using the default mobile browser (mandatory for SSO plugins)';
+$string['loginfirstappthenbrowser'] = 'The user must login in the app if it fails try in the browser (recommended when using different authentication methods)';

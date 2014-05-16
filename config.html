@@ -1,0 +1,30 @@
+<!-- No config needed -->
+<?php
+    // Set to defaults if undefined.
+    if (!isset($config->typeoflogin)) {
+        $config->typeoflogin = 1;
+    }
+
+    $options = array(
+        1 => get_string('loginintheapp', 'auth_moodlemobile'),
+        2 => get_string('logininthebrowser', 'auth_moodlemobile'),
+        3 => get_string('loginfirstappthenbrowser', 'auth_moodlemobile')
+    );
+
+?>
+
+<table cellspacing="0" cellpadding="5" border="0">
+<tr>
+   <td colspan="3">
+        <h2 class="main"><?php print_string('auth_moodlemobilesettings', 'auth_moodlemobile') ?> </h2>
+   </td>
+</tr>
+<tr>
+    <td align="right"><label for="menutypeoflogin"><?php print_string('auth_moodlemobiletypeoflogin_key', 'auth_moodlemobile') ?></label></td>
+    <td><?php
+        global $OUTPUT;
+        echo html_writer::select($options, 'typeoflogin', $config->typeoflogin, false);
+        ?></td>
+    <td><?php print_string('auth_moodlemobiletypeoflogin', 'auth_moodlemobile') ?></td>
+</tr>
+</table>

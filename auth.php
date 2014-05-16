@@ -79,12 +79,20 @@ class auth_plugin_moodlemobile extends auth_plugin_base {
      * @param array $page An object containing all the data for this page.
      */
     public function config_form($config, $err, $userfields) {
+        include("config.html");
     }
 
     /**
      * Processes and stores configuration data for this authentication plugin.
      */
     public function process_config($config) {
+        // Set to defaults if undefined.
+        if (!isset($config->typeoflogin)) {
+            $config->typeoflogin = 1;
+        }
+
+        // save settings
+        set_config('typeoflogin', $config->typeoflogin, 'auth/moodlemobile');
         return true;
     }
 
